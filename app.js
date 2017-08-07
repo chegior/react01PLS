@@ -3,17 +3,30 @@
 (function(){
     'use strict';//tell this browser to execute in strict mode
 
-    var Quiz = React.createClass({
+    var Quiz=React.createClass({
         render:function (){
-            return 
+            return (
                 <div>
-                    <h2>THIS IS A COMPONENT</h2>
+                    <h2>
+                    TEST COMPONENT {this.props.data} 
+                    </h2> 
                 </div>
+
+                );
+                
         }
-    });    
+    });   
     
-    React.renderComponent( <Quiz data={'foo'}/>,
-                            document.getElementById("app"));
+    var Book = React.createClass({
+        render:function(){
+            return(
+                <h3>Second Component</h3>
+            );
+        }
+
+    });
+    
+    ReactDOM.render( <Quiz data={"Dymanic Component"}/>, document.getElementById("app"));
 }) ();
 
 
