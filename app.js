@@ -7,9 +7,10 @@
         render:function (){
             return (
                 <div>
-                    <h2>
-                    TEST COMPONENT {this.props.data} 
-                    </h2> 
+                   {this.props.books.map(function(b){
+                       return (<Book 
+                       title={b}/>);
+                   })}
                 </div>
 
                 );
@@ -20,13 +21,15 @@
     var Book = React.createClass({
         render:function(){
             return(
-                <h3>Second Component</h3>
+                <div>
+                    <h3>{this.props.title}</h3>
+                </div>
             );
         }
 
     });
     
-    ReactDOM.render( <Quiz data={"Dymanic Component"}/>, document.getElementById("app"));
+    ReactDOM.render( <Quiz books={['Lord of the ring','the hansel','VRX']}/>, document.getElementById("app"));
 }) ();
 
 
